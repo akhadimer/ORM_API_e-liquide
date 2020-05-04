@@ -1,12 +1,11 @@
 var jwt = require('jsonwebtoken');
 
-const JWT_SIGN_SECRET = '<JWT_SIGN_TOKEN>';
+const JWT_SIGN_SECRET = '69J3832PzxmX27DpWjkh4vXEapraQHCNL4TWFJ8wVHn669bn9q7y22';
 
 module.exports = {
     generateTokenForUser: function (userData) {
         return jwt.sign({
-            userId: userData.id,
-            isAdmin: userData.isAdmin
+            userId: userData.id
         },
             JWT_SIGN_SECRET,
             {

@@ -1,6 +1,10 @@
-var models = require('../models');
+var models   = require('../models');
 var asyncLib = require('async');
 var jwtUtils = require('../utils/jwt.utils');
+
+const TITLE_LIMIT   = 2;
+const CONTENT_LIMIT = 4;
+const ITEMS_LIMIT   = 50;
 
 module.exports = {
     createEliquide: function (req, res) {

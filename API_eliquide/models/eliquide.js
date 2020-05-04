@@ -9,6 +9,16 @@ module.exports = (sequelize, DataTypes) => {
     origine: DataTypes.STRING,
     contenance: DataTypes.INTEGER,
     type_saveur: DataTypes.STRING
-  }, {});
+  }, {
+    classMethods: {
+      associate: function (models) {
+        models.Eliquide.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false
+          }
+        })
+      }
+    }
+  });
   return Eliquide;
 };
