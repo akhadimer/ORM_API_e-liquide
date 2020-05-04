@@ -8,6 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
+      },
       nom: {
         allowNull: false,
         type: Sequelize.STRING
@@ -29,6 +37,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       origine: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       contenance: {
@@ -36,6 +45,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       type_saveur: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       createdAt: {
